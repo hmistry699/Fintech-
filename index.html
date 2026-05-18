@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Redesigned Great Eastern travel insurance product page with Nielsen heuristic audit.">
+    <title>Great Eastern Travel Insurance Redesign</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/89/Ge-logo.svg" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#products">Skip to products</a>
+
+    <header class="site-header">
+      <div class="topbar">
+        <a class="brand" href="#" aria-label="Great Eastern home">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Ge-logo.svg" alt="Great Eastern, an OCBC company">
+        </a>
+
+        <nav class="main-nav" aria-label="Primary">
+          <a href="#products">Products</a>
+          <a href="#quote">Quote</a>
+          <a href="#support">Help</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="icon-button" id="compareToggle" type="button" aria-controls="compare" aria-pressed="false">
+            <span aria-hidden="true">=</span>
+            <span>Compare</span>
+          </button>
+          <button class="primary-button small" type="button" data-scroll="#quote">Start quote</button>
+        </div>
+      </div>
+
+      <section class="audit-header" aria-labelledby="audit-title">
+        <div class="audit-copy">
+          <p class="eyebrow">UX audit</p>
+          <h2 id="audit-title">Nielsen's 10 heuristics evaluated</h2>
+          <p>10 of 10 principles are addressed in this redesign through visible status, clear controls, prevention, recovery, and help.</p>
+        </div>
+
+        <div class="audit-score" aria-label="Audit score">
+          <strong>10/10</strong>
+          <span>Covered</span>
+        </div>
+
+        <button class="ghost-button" id="auditToggle" type="button" aria-expanded="false" aria-controls="auditPanel">
+          View audit
+        </button>
+
+        <div class="audit-panel" id="auditPanel" hidden>
+          <ol class="audit-grid">
+            <li><strong>1. Visibility of status</strong><span>Live quote state, step tracker, selected product feedback.</span></li>
+            <li><strong>2. Real-world match</strong><span>Trip terms, traveller counts, dates, benefits, and support language.</span></li>
+            <li><strong>3. User control</strong><span>Compare, start over, brochure links, and non-blocking product switching.</span></li>
+            <li><strong>4. Consistency</strong><span>Standard nav, button hierarchy, repeated product-card patterns.</span></li>
+            <li><strong>5. Error prevention</strong><span>Required labels, date checks, eligibility notes, disabled assumptions avoided.</span></li>
+            <li><strong>6. Recognition</strong><span>Visible benefits, policy highlights, and persistent next-step summary.</span></li>
+            <li><strong>7. Flexibility</strong><span>Quick product actions, compare table, keyboard-friendly controls.</span></li>
+            <li><strong>8. Minimalist design</strong><span>Reduced clutter, stronger hierarchy, grouped evidence and actions.</span></li>
+            <li><strong>9. Error recovery</strong><span>Inline validation with specific fixes and focus management.</span></li>
+            <li><strong>10. Help and docs</strong><span>Brochure access, phone support, FAQ-style guidance, human help paths.</span></li>
+          </ol>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Travel insurance</p>
+          <h1 id="hero-title">Choose the cover that fits your next trip.</h1>
+          <p class="lead">Annual and short-term travel plans are presented side by side with clearer benefits, visible quote progress, and recovery-friendly form states.</p>
+
+          <div class="status-card" aria-live="polite" aria-atomic="true">
+            <div>
+              <span class="status-label">Current step</span>
+              <strong id="statusText">Select a product</strong>
+            </div>
+            <ol class="steps" aria-label="Quote progress">
+              <li class="active">Product</li>
+              <li>Trip</li>
+              <li>Review</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-label="Travel cover visual">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="People beginning a road trip near the coast">
+          <div class="media-badge">
+            <strong>24-hour support</strong>
+            <span>Claims, medical help, and travel disruption guidance.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-band" id="products" aria-labelledby="products-title">
+        <div class="section-heading">
+          <p class="eyebrow">Available products</p>
+          <h2 id="products-title">Great Voyager+ plans</h2>
+          <p>Two clear options replace the low-context product cards in the original page.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card" data-product="annual">
+            <img class="product-image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Two drinks by the sea during a holiday">
+            <div class="product-body">
+              <div class="product-kicker">For frequent travellers</div>
+              <h3>Great Voyager+ Annual</h3>
+              <p>One policy for multiple trips throughout the year, built for recurring leisure or business travel.</p>
+              <ul class="benefit-list">
+                <li>Accidental death and permanent disablement</li>
+                <li>Wide range of medical benefits</li>
+                <li>More cover for travel inconveniences</li>
+              </ul>
+              <div class="product-actions">
+                <button class="primary-button" type="button" data-select="annual">Get quote</button>
+                <a href="https://www.greateasternlife.com/my/en/personal-insurance/our-products.html" target="_blank" rel="noreferrer">Brochure</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product="short">
+            <img class="product-image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Adult carrying a child under a clear sky">
+            <div class="product-body">
+              <div class="product-kicker">For one trip</div>
+              <h3>Great Voyager+ Short Term</h3>
+              <p>Single-trip protection for holidays, family travel, and short overseas plans.</p>
+              <ul class="benefit-list">
+                <li>Accidental death and permanent disablement</li>
+                <li>Wide range of medical benefits</li>
+                <li>More cover for travel inconveniences</li>
+              </ul>
+              <div class="product-actions">
+                <button class="primary-button" type="button" data-select="short">Get quote</button>
+                <a href="https://www.greateasternlife.com/my/en/personal-insurance/our-products.html" target="_blank" rel="noreferrer">Brochure</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="compare-section" id="compare" aria-labelledby="compare-title" hidden>
+        <div class="section-heading compact">
+          <p class="eyebrow">Recognition over recall</p>
+          <h2 id="compare-title">Compare plan fit</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Need</th>
+                <th scope="col">Annual</th>
+                <th scope="col">Short Term</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Best for</th>
+                <td>Multiple trips in 12 months</td>
+                <td>One planned trip</td>
+              </tr>
+              <tr>
+                <th scope="row">Setup effort</th>
+                <td>Complete once, reuse often</td>
+                <td>Fastest for a single journey</td>
+              </tr>
+              <tr>
+                <th scope="row">Control</th>
+                <td>Switch product before quote review</td>
+                <td>Switch product before quote review</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="quote-section" id="quote" aria-labelledby="quote-title">
+        <div class="quote-summary">
+          <p class="eyebrow">Quote workspace</p>
+          <h2 id="quote-title">Your selected cover</h2>
+          <p id="selectedProduct">No product selected yet.</p>
+          <div class="summary-actions">
+            <button class="secondary-button" type="button" id="chooseAnnual">Use Annual</button>
+            <button class="secondary-button" type="button" id="chooseShort">Use Short Term</button>
+            <button class="text-button" type="button" id="resetFlow">Start over</button>
+          </div>
+        </div>
+
+        <form class="quote-form" id="quoteForm" novalidate>
+          <div class="form-header">
+            <h3>Trip details</h3>
+            <p>Fields marked required are checked before review.</p>
+          </div>
+
+          <div class="error-panel" id="errorPanel" tabindex="-1" hidden>
+            <strong>Review these details</strong>
+            <ul id="errorList"></ul>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              Destination
+              <input id="destination" name="destination" type="text" autocomplete="country-name" placeholder="Example: Japan" required>
+            </label>
+            <label>
+              Travellers
+              <input id="travellers" name="travellers" type="number" min="1" max="20" value="1" required>
+            </label>
+            <label>
+              Departure date
+              <input id="departDate" name="departDate" type="date" required>
+            </label>
+            <label>
+              Return date
+              <input id="returnDate" name="returnDate" type="date" required>
+            </label>
+          </div>
+
+          <fieldset class="eligibility">
+            <legend>Eligibility confirmation</legend>
+            <label class="check-row">
+              <input id="residentCheck" type="checkbox" required>
+              <span>I confirm the traveller details can be reviewed before purchase.</span>
+            </label>
+          </fieldset>
+
+          <div class="form-footer">
+            <button class="primary-button" type="submit">Review quote</button>
+            <p id="formStatus" role="status">Validation will identify missing or conflicting details.</p>
+          </div>
+        </form>
+      </section>
+
+      <section class="journey-section" id="quoteJourney" aria-labelledby="journey-title" hidden>
+        <div class="journey-top">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Ge-logo.svg" alt="Great Eastern, an OCBC company">
+          <div class="journey-progress" aria-label="Purchase progress">
+            <button class="journey-step is-active" type="button" data-flow-step="plan">1. Plan selection</button>
+            <button class="journey-step" type="button" data-flow-step="details">2. Your details</button>
+            <button class="journey-step" type="button" data-flow-step="summary">3. Summary</button>
+            <button class="journey-step" type="button" data-flow-step="payment">4. Payment</button>
+            <button class="journey-step" type="button" data-flow-step="feedback">5. Feedback</button>
+          </div>
+        </div>
+
+        <div class="journey-heading">
+          <p class="eyebrow">Quote review</p>
+          <h2 id="journey-title">Great Voyager+ Annual</h2>
+          <p id="journeyIntro">Start by selecting the plan and traveller count that best match this trip.</p>
+        </div>
+
+        <div class="journey-layout">
+          <div class="journey-screens" aria-live="polite">
+            <article class="flow-screen is-active" data-screen="plan" aria-labelledby="plan-screen-title">
+              <div class="flow-card plan-card">
+                <div class="plan-benefit-header">
+                  <span>Premium is inclusive of 25% rebate</span>
+                  <strong>Key benefits</strong>
+                </div>
+
+                <div class="plan-columns" role="radiogroup" aria-label="Choose a plan">
+                  <button class="plan-option is-selected" type="button" role="radio" aria-checked="true" data-plan="essential">
+                    <span>Essential</span>
+                    <strong>MYR 243.00</strong>
+                    <small>Per traveller</small>
+                  </button>
+                  <button class="plan-option" type="button" role="radio" aria-checked="false" data-plan="supreme">
+                    <span>Supreme with COVID-19</span>
+                    <strong>MYR 504.00</strong>
+                    <small>Per traveller</small>
+                  </button>
+                </div>
+
+                <div class="benefit-compare">
+                  <div class="benefit-row">
+                    <span>Accidental Death</span>
+                    <strong>% of Accidental Death Sum Insured</strong>
+                    <strong>% of Accidental Death Sum Insured</strong>
+                  </div>
+                  <div class="benefit-row">
+                    <span>Child Education Fund</span>
+                    <strong>MYR 5,000</strong>
+                    <strong>MYR 10,000</strong>
+                  </div>
+                  <div class="benefit-row">
+                    <span>Personal Liability</span>
+                    <strong>N/A</strong>
+                    <strong>MYR 1,000,000</strong>
+                  </div>
+                  <div class="benefit-row">
+                    <span>Rental Car Excess Cover</span>
+                    <strong>N/A</strong>
+                    <strong>MYR 1,000</strong>
+                  </div>
+                  <div class="benefit-row">
+                    <span>Automatic Extension of Cover</span>
+                    <strong>Up to 30 days</strong>
+                    <strong>Up to 30 days</strong>
+                  </div>
+                </div>
+
+                <details class="more-benefits">
+                  <summary>Show more benefits</summary>
+                  <ul>
+                    <li>Hospital allowance and emergency medical evacuation.</li>
+                    <li>Baggage delay, loss of travel documents, and flight delay.</li>
+                    <li>Trip cancellation, travel reroute, and missed connections.</li>
+                  </ul>
+                </details>
+
+                <div class="flow-actions">
+                  <button class="secondary-button" type="button" data-flow-back="landing">Back</button>
+                  <button class="primary-button" type="button" data-flow-next="details">Next</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="flow-screen" data-screen="details" aria-labelledby="details-screen-title">
+              <div class="flow-card">
+                <div class="form-header">
+                  <h3 id="details-screen-title">Your details</h3>
+                  <p>Use clear sections so applicant and traveller information can be reviewed without losing context.</p>
+                </div>
+
+                <div class="segmented" role="radiogroup" aria-label="Applicant type">
+                  <button class="is-selected" type="button" aria-pressed="true">Individual</button>
+                  <button type="button" aria-pressed="false">Corporate</button>
+                </div>
+
+                <form id="detailsForm" class="details-form" novalidate>
+                  <div class="error-panel" id="detailsErrorPanel" tabindex="-1" hidden>
+                    <strong>Complete these details</strong>
+                    <ul id="detailsErrorList"></ul>
+                  </div>
+
+                  <fieldset>
+                    <legend>Applicant information</legend>
+                    <div class="form-grid">
+                      <label>ID type <select id="idType" required><option value="">Select ID type</option><option>NRIC</option><option>Passport</option></select></label>
+                      <label>ID number <input id="idNumber" type="text" autocomplete="off" required></label>
+                      <label>Salutation <select id="salutation" required><option value="">Select salutation</option><option>Mr</option><option>Ms</option><option>Mrs</option></select></label>
+                      <label>Full name <input id="fullName" type="text" autocomplete="name" required></label>
+                      <label>Date of birth <input id="birthDate" type="date" required></label>
+                      <label>Marital status <select id="maritalStatus" required><option value="">Select status</option><option>Single</option><option>Married</option></select></label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <legend>Contact and mailing address</legend>
+                    <div class="form-grid">
+                      <label>Mobile number <input id="mobileNumber" type="tel" autocomplete="tel" required></label>
+                      <label>Email address <input id="emailAddress" type="email" autocomplete="email" required></label>
+                      <label>Postcode <input id="postcode" type="text" inputmode="numeric" required></label>
+                      <label>State <select id="state" required><option value="">Select state</option><option>Kuala Lumpur</option><option>Selangor</option><option>Penang</option></select></label>
+                      <label class="span-2">Address line 1 <input id="addressLine" type="text" autocomplete="address-line1" required></label>
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <legend>Traveller information</legend>
+                    <label class="check-row">
+                      <input id="sameTraveller" type="checkbox" checked>
+                      <span>Applicant is also the traveller.</span>
+                    </label>
+                    <div class="form-grid">
+                      <label>Relationship <select><option>Main Insured</option><option>Spouse</option><option>Child</option></select></label>
+                      <label>Nationality <select><option>Malaysian</option><option>Singaporean</option><option>Other</option></select></label>
+                    </div>
+                  </fieldset>
+                </form>
+
+                <div class="flow-actions">
+                  <button class="secondary-button" type="button" data-flow-next="plan">Back</button>
+                  <button class="primary-button" type="button" id="continueDetails">Continue</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="flow-screen" data-screen="summary" aria-labelledby="summary-screen-title">
+              <div class="flow-card">
+                <div class="form-header">
+                  <h3 id="summary-screen-title">Summary</h3>
+                  <p>Everything important is visible before payment, with edit controls that return to the exact step.</p>
+                </div>
+
+                <div class="review-grid">
+                  <section>
+                    <div class="review-title">
+                      <h4>Trip</h4>
+                      <button class="text-button" type="button" data-flow-next="landing">Edit</button>
+                    </div>
+                    <dl>
+                      <div><dt>Destination</dt><dd id="summaryDestination">-</dd></div>
+                      <div><dt>Travel dates</dt><dd id="summaryDates">-</dd></div>
+                      <div><dt>Travellers</dt><dd id="summaryTravellers">-</dd></div>
+                    </dl>
+                  </section>
+
+                  <section>
+                    <div class="review-title">
+                      <h4>Applicant</h4>
+                      <button class="text-button" type="button" data-flow-next="details">Edit</button>
+                    </div>
+                    <dl>
+                      <div><dt>Name</dt><dd id="summaryName">-</dd></div>
+                      <div><dt>Email</dt><dd id="summaryEmail">-</dd></div>
+                      <div><dt>Mobile</dt><dd id="summaryMobile">-</dd></div>
+                    </dl>
+                  </section>
+
+                  <section>
+                    <div class="review-title">
+                      <h4>Cover</h4>
+                      <button class="text-button" type="button" data-flow-next="plan">Edit</button>
+                    </div>
+                    <dl>
+                      <div><dt>Product</dt><dd id="summaryProduct">Great Voyager+ Annual</dd></div>
+                      <div><dt>Plan</dt><dd id="summaryPlan">Essential</dd></div>
+                      <div><dt>Premium payable</dt><dd id="summaryPremium">MYR 272.44</dd></div>
+                    </dl>
+                  </section>
+                </div>
+
+                <label class="check-row consent-row">
+                  <input id="summaryConsent" type="checkbox">
+                  <span>I have reviewed the plan details, product disclosure sheet, and applicant information.</span>
+                </label>
+
+                <div class="flow-actions">
+                  <button class="secondary-button" type="button" data-flow-next="details">Back</button>
+                  <button class="primary-button" type="button" id="goPayment">Proceed to payment</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="flow-screen" data-screen="payment" aria-labelledby="payment-screen-title">
+              <div class="flow-card">
+                <div class="form-header">
+                  <h3 id="payment-screen-title">Payment</h3>
+                  <p>Select a payment method and confirm the payable premium.</p>
+                </div>
+
+                <div class="payment-methods" role="radiogroup" aria-label="Payment method">
+                  <button class="payment-option is-selected" type="button" role="radio" aria-checked="true">
+                    <strong>Credit or debit card</strong>
+                    <span>Visa, Mastercard, and secure bank authentication supported.</span>
+                  </button>
+                  <button class="payment-option" type="button" role="radio" aria-checked="false">
+                    <strong>Online banking</strong>
+                    <span>Pay through participating Malaysian banks.</span>
+                  </button>
+                </div>
+
+                <div class="secure-note">
+                  <strong>Secure checkout</strong>
+                  <span>No payment information is stored in this prototype. The production flow should show bank authentication status and clear retry recovery.</span>
+                </div>
+
+                <div class="flow-actions">
+                  <button class="secondary-button" type="button" data-flow-next="summary">Back</button>
+                  <button class="primary-button" type="button" id="payButton">Pay MYR 272.44</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="flow-screen" data-screen="feedback" aria-labelledby="feedback-screen-title">
+              <div class="flow-card feedback-card">
+                <div class="success-mark" aria-hidden="true">
+                  <span></span>
+                </div>
+                <p class="eyebrow">Payment received</p>
+                <h3 id="feedback-screen-title">Thank you. Your travel cover is confirmed.</h3>
+                <p>The payment has been made successfully. A receipt and policy documents should be sent to the applicant email address.</p>
+
+                <div class="feedback-details">
+                  <div>
+                    <span>Reference number</span>
+                    <strong>GEG-TRAV-2026-0001</strong>
+                  </div>
+                  <div>
+                    <span>Premium paid</span>
+                    <strong id="feedbackPremium">MYR 272.44</strong>
+                  </div>
+                  <div>
+                    <span>Status</span>
+                    <strong>Payment successful</strong>
+                  </div>
+                </div>
+
+                <div class="flow-actions">
+                  <button class="secondary-button" type="button" data-flow-next="summary">Review summary</button>
+                  <button class="primary-button" type="button" id="finishFlow">Done</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="journey-summary" aria-label="Quote summary">
+            <div class="summary-card">
+              <div class="summary-card-header">
+                <h3>Summary</h3>
+                <button class="text-button" type="button">Save quote</button>
+              </div>
+              <dl>
+                <div>
+                  <dt>Plan selected</dt>
+                  <dd id="sidePlan">Essential</dd>
+                </div>
+                <div>
+                  <dt>Premium payable</dt>
+                  <dd id="sidePremium">MYR 272.44</dd>
+                </div>
+              </dl>
+              <details>
+                <summary>Premium breakdown</summary>
+                <p>Base premium, rebate, and stamp duty are grouped here for transparent review.</p>
+              </details>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="support-footer" id="support">
+      <div>
+        <p class="eyebrow">Need help?</p>
+        <h2>Support stays visible when decisions get harder.</h2>
+      </div>
+      <address>
+        <a href="tel:1300130088">1300-1300 88</a>
+        <a href="tel:+60342598888">+603 4259 8888</a>
+        <a href="https://www.greateasterngeneral.com/my/en/index.html" target="_blank" rel="noreferrer">Great Eastern Malaysia</a>
+      </address>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
